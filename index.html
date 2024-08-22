@@ -25,7 +25,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
 
 </head>
+<style>
+  .page-item{
+    padding: 0 10px;
+  }
+  .page-item:hover{
+    cursor: pointer;
+    background-color: #353B48;
+    color: white;
 
+  }
+  .active{
+    background-color: #353B48;
+    color: white;
+  }
+</style>
 <body>
   <div class="wrapper">
     <div class="body-overlay"></div>
@@ -59,12 +73,12 @@
 
         <li class="dropdown">
           <a href="#homeSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-            <i class="material-icons">apps</i>Employee
+            <i class="material-icons">apps</i>Sort
           </a>
           <ul class="collapse list-unstyled menu" id="homeSubmenu2">
-            <li><a href="#">Apps 1</a></li>
-            <li><a href="#">Apps 2</a></li>
-            <li><a href="#">Apps 3</a></li>
+            <li class="sortItem" value="name"><a href="#" >By name</a></li>
+            <li class="sortItem" value="age"><a href="#" >By age</a></li>
+            <li class="sortItem" value="gender  "><a href="#">By gender</a></li>
           </ul>
         </li>
 
@@ -146,16 +160,14 @@
             </div>
 
             <div class="col-md-5 col-lg-3 order-3 order-md-2">
-              <div class="xp-searchbar">
-                <form>
+              <div class="xp-searchbar">               
                   <div class="input-group">
-                    <input type="search" class="form-control" placeholder="Search">
+                    <input type="search" class="form-control" placeholder="Search" id="searchUser">
                     <div class="input-group-append">
-                      <button class="btn" type="submit" id="button-addon2">Go
+                      <button class="btn" id="button-addon2">Go
                       </button>
                     </div>
                   </div>
-                </form>
               </div>
             </div>
 
@@ -249,127 +261,42 @@
               </div>
 
               <table class="table table-striped table-hover">
-                <thead>
+                <the  ad>
                   <tr>
                     <th><span class="custom-checkbox">
                         <input type="checkbox" id="selectAll">
                         <label for="selectAll"></label></th>
                     <th>Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
                     <th>Email</th>
                     <th>Address</th>
                     <th>Phone</th>
+                    <th>Department</th>
+                    <th>Position</th>
                     <th>Actions</th>
                   </tr>
                 </thead>
-
-                <tbody>
-                  <tr>
-                    <th><span class="custom-checkbox">
-                        <input type="checkbox" id="checkbox1" name="option[]" value="1">
-                        <label for="checkbox1"></label></th>
-                    <th>Thomas Hardy</th>
-                    <th>ThomasHardy@gmail.com</th>
-                    <th>90r parkdground poland Usa.</th>
-                    <th>(78-582552-9)</th>
-                    <th>
-                      <a href="#editEmployeeModal" class="edit" data-toggle="modal">
-                        <i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>
-                      </a>
-                      <a href="#deleteEmployeeModal" class="delete" data-toggle="modal">
-                        <i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>
-                      </a>
-                    </th>
-                  </tr>
-
-
-                  <tr>
-                    <th><span class="custom-checkbox">
-                        <input type="checkbox" id="checkbox2" name="option[]" value="1">
-                        <label for="checkbox2"></label></th>
-                    <th>Dominique Perrier</th>
-                    <th>dominiquePerrier@gmail.com</th>
-                    <th>90r ser57, Berlin poland Bermany.</th>
-                    <th>(78-5235-2-9)</th>
-                    <th>
-                      <a href="#editEmployeeModal" class="edit" data-toggle="modal">
-                        <i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>
-                      </a>
-                      <a href="#deleteEmployeeModal" class="delete" data-toggle="modal">
-                        <i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>
-                      </a>
-                    </th>
-                  </tr>
-
-
-                  <tr>
-                    <th><span class="custom-checkbox">
-                        <input type="checkbox" id="checkbox3" name="option[]" value="1">
-                        <label for="checkbox3"></label></th>
-                    <th>Marai Andres</th>
-                    <th>MarariAndres@gmail.com</th>
-                    <th>90r ser57, Berlin poland Bermany.</th>
-                    <th>(78-239-669)</th>
-                    <th>
-                      <a href="#edit" class="edit" data-toggle="modal">
-                        <i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>
-                      </a>
-                      <a href="#deleteEmployeeModal" class="delete" data-toggle="modal">
-                        <i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>
-                      </a>
-                    </th>
-                  </tr>
-
-                  <tr>
-                    <th><span class="custom-checkbox">
-                        <input type="checkbox" id="checkbox4" name="option[]" value="1">
-                        <label for="checkbox4"></label></th>
-                    <th>Vishweb Design</th>
-                    <th>vishwebdesign@gmail.com</th>
-                    <th> B-2 ser57 Nodia East Delhi,India.</th>
-                    <th>(78-239-669)</th>
-                    <th>
-                      <a href="#editEmployeeModal" class="edit" data-toggle="modal">
-                        <i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>
-                      </a>
-                      <a href="#deleteEmployeeModal" class="delete" data-toggle="modal">
-                        <i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>
-                      </a>
-                    </th>
-                  </tr>
-
-                  <tr>
-                    <th><span class="custom-checkbox">
-                        <input type="checkbox" id="checkbox5" name="option[]" value="1">
-                        <label for="checkbox5"></label></th>
-                    <th>Vishwajeet Kumar</th>
-                    <th>vishkumar234@gmail.com</th>
-                    <th> B-2 ser57 Nodia East Delhi,India.</th>
-                    <th>(78-555-229)</th>
-                    <th>
-                      <a href="#editEmployeeModal" class="edit" data-toggle="modal">
-                        <i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>
-                      </a>
-                      <a href="#deleteEmployeeModal" class="delete" data-toggle="modal">
-                        <i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>
-                      </a>
-                    </th>
-                  </tr>
-
+                <tbody id="dataUsers">
                 </tbody>
 
 
               </table>
 
               <div class="clearfix">
-                <div class="hint-text">showing <b>5</b> out of <b>25</b></div>
+                <div class="hint-text">showing <b>30</b> out of <b>208</b></div>
                 <ul class="pagination">
-                  <li class="page-item disabled"><a href="#">Previous</a></li>
-                  <li class="page-item "><a href="#" class="page-link">1</a></li>
-                  <li class="page-item "><a href="#" class="page-link">2</a></li>
-                  <li class="page-item active"><a href="#" class="page-link">3</a></li>
-                  <li class="page-item "><a href="#" class="page-link">4</a></li>
-                  <li class="page-item "><a href="#" class="page-link">5</a></li>
-                  <li class="page-item "><a href="#" class="page-link">Next</a></li>
+                  <li class="page-item">1</li>
+                  <li class="page-item">2</li>
+                  <li class="page-item">3</li>
+                  <li class="page-item">4</li>
+                  <li class="page-item">5</li>
+                  <li class="page-item">6</li>
+                  <li class="page-item">7</li>
+                  <li class="page-item">8</li>
+                  <li class="page-item">9</li>
+                  <li class="page-item">10</li>
+            
                 </ul>
               </div>
             </div>
@@ -392,6 +319,14 @@
                     <input type="text" class="form-control" required>
                   </div>
                   <div class="form-group">
+                    <label>Age</label>
+                    <input type="text" class="form-control" required>
+                  </div>
+                  <div class="form-group">
+                    <label>Gender</label>
+                    <input type="text" class="form-control" required>
+                  </div>
+                  <div class="form-group">
                     <label>Email</label>
                     <input type="emil" class="form-control" required>
                   </div>
@@ -401,6 +336,12 @@
                   </div>
                   <div class="form-group">
                     <label>Phone</label>
+                    <input type="text" class="form-control" required>
+                  </div>                  <div class="form-group">
+                    <label>Department</label>
+                    <input type="text" class="form-control" required>
+                  </div>                  <div class="form-group">
+                    <label>Position</label>
                     <input type="text" class="form-control" required>
                   </div>
                 </div>
@@ -413,9 +354,6 @@
           </div>
 
           <!----edit-modal end--------->
-
-
-
 
 
           <!----edit-modal start--------->
@@ -434,6 +372,14 @@
                     <input type="text" class="form-control" required>
                   </div>
                   <div class="form-group">
+                    <label>Age</label>
+                    <input type="text" class="form-control" required>
+                  </div>
+                  <div class="form-group">
+                    <label>Gender</label>
+                    <input type="text" class="form-control" required>
+                  </div>
+                  <div class="form-group">
                     <label>Email</label>
                     <input type="emil" class="form-control" required>
                   </div>
@@ -443,6 +389,12 @@
                   </div>
                   <div class="form-group">
                     <label>Phone</label>
+                    <input type="text" class="form-control" required>
+                  </div>                  <div class="form-group">
+                    <label>Department</label>
+                    <input type="text" class="form-control" required>
+                  </div>                  <div class="form-group">
+                    <label>Position</label>
                     <input type="text" class="form-control" required>
                   </div>
                 </div>
@@ -512,6 +464,7 @@
   <script src="./assets/js/popper.min.js"></script>
   <script src="./assets/js/bootstrap.min.js"></script>
   <script src="./assets/js/jquery-3.3.1.min.js"></script>
+  <script src="./index.js" type="module"></script>
 
 
   <script type="text/javascript">
