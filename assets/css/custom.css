@@ -740,7 +740,7 @@ table.table .avatar {
 .modal .modal-header,
 .modal .modal-body,
 .modal .modal-footer {
-  padding: 20px 30px;
+  padding: 7px 30px;
 }
 
 .modal .modal-content {
@@ -833,4 +833,5 @@ footer {
     transition: all 150ms linear;
     background-color: rgba(0, 0, 0, 0.5);
   }
+
 }
