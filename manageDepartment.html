@@ -23,7 +23,6 @@
 
   <!--google material icon-->
   <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
 <style>
@@ -41,7 +40,6 @@
   .active {
     background-color: #353B48;
     color: #000;
-    
   }
 </style>
 
@@ -74,14 +72,13 @@
           </ul>
         </li>
 
-
         <li class="dropdown">
           <a href="#homeSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
             <i class="material-icons">group</i>Employee
           </a>
           <ul class="collapse list-unstyled menu" id="homeSubmenu2">
-            <li class="ageChart" value=""><a href="#">Employee chart</a></li>
-            <li class="" value=""><a href="index.html">Manage employee</a></li>
+            <li class="sortItem" value="name"><a href="#">Employee chart</a></li>
+            <li class="sortItem" value=""><a href="index.html">Manage employee</a></li>
             <li class="sortItem" value="age"><a href="#">Sort by age</a></li>
           </ul>
         </li>
@@ -241,206 +238,136 @@
 
       <!------main-content-start----------->
 
+
+      <style>
+        .main-content {
+          max-width: 85vw;
+          margin: auto;
+          background: #fff;
+          padding: 20px;
+          border-radius: 8px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          margin-top: 40px;
+          margin-bottom: 40px;
+        }
+
+        .main-content h2 {
+          text-align: left;
+          color: #333;
+        }
+
+        .main-content table {
+          width: 100%;
+          border-collapse: collapse;
+          margin-top: 20px;
+        }
+
+        .main-content table,
+        th,
+        td {
+          border: 1px solid #ddd;
+        }
+
+        .main-content th,
+        td {
+          padding: 12px;
+          text-align: left;
+          vertical-align: middle;
+        }
+
+        .main-content th {
+          background-color: #f2f2f2;
+          font-weight: bold;
+        }
+
+        .main-content td button {
+          padding: 8px 16px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          color: #fff;
+        }
+
+        .main-content .edit-btn {
+          background-color: #007bff;
+          margin-right: 8px;
+        }
+
+        .main-content .delete-btn {
+          background-color: #dc3545;
+        }
+  
+      </style>
+
+
       <div class="main-content">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="table-wrapper">
-
-              <div class="table-title">
-                <div class="row">
-                  <div class="col-sm-6 p-0 flex justify-content-lg-start justify-content-center">
-                    <h2 class="ml-lg-2">Manage Employees</h2>
-                  </div>
-                  <div class="col-sm-6 p-0 flex justify-content-lg-end justify-content-center">
-                    <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal">
-                      <i class="material-icons">&#xE147;</i>
-                      <span>Add New Employees</span>
-                    </a>
-                    <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal">
-                      <i class="material-icons">&#xE15C;</i>
-                      <span>Delete</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <table class="table table-striped table-hover">
-                <the ad>
-                  <tr>
-                    <th><span class="custom-checkbox">
-                        <input type="checkbox" id="selectAll">
-                        <label for="selectAll"></label></th>
-                    <th>Name</th>
-                    <th>Age</th>
-                    <th>Gender</th>
-                    <th>Email</th>
-                    <th>Address</th>
-                    <th>Phone</th>
-                    <th>Department</th>
-                    <th>Position</th>
-                    <th>Actions</th>
-                  </tr>
-                  </thead>
-                  <tbody id="dataUsers">
-                  </tbody>
-
-
-              </table>
-
-              <div class="clearfix">
-                <ul class="pagination">
-                  <li class="page-item">1</li>
-                  <li class="page-item">2</li>
-                  <li class="page-item">3</li>
-                  <li class="page-item">4</li>
-                  <li class="page-item">5</li>
-                  <li class="page-item">6</li>
-                  <li class="page-item">7</li>
-                  <li class="page-item">8</li>
-                  <li class="page-item">9</li>
-                  <li class="page-item">10</li>
-
-                </ul>
-              </div>
-            </div>
-          </div>
-
-
-          <!----add-modal start--------->
-          <div class="modal fade" tabindex="-1" id="addEmployeeModal" role="dialog">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title">Add Employees</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <div class="form-group">
-                    <label>Name</label>
-                    <input type="text" class="form-control" required>
-                  </div>
-                  <div class="form-group">
-                    <label>Age</label>
-                    <input type="text" class="form-control" required>
-                  </div>
-                  <div class="form-group">
-                    <label>Gender</label>
-                    <input type="text" class="form-control" required>
-                  </div>
-                  <div class="form-group">
-                    <label>Email</label>
-                    <input type="emil" class="form-control" required>
-                  </div>
-                  <div class="form-group">
-                    <label>Address</label>
-                    <textarea class="form-control" required></textarea>
-                  </div>
-                  <div class="form-group">
-                    <label>Phone</label>
-                    <input type="text" class="form-control" required>
-                  </div>
-                  <div class="form-group">
-                    <label>Department</label>
-                    <input type="text" class="form-control" required>
-                  </div>
-                  <div class="form-group">
-                    <label>Position</label>
-                    <input type="text" class="form-control" required>
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                  <button type="button" class="btn btn-success">Add</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!----edit-modal end--------->
-
-
-          <!----edit-modal start--------->
-          <div class="modal fade" tabindex="-1" id="editEmployeeModal" role="dialog">
-            <div class="modal-dialog edit-modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title">Edit Employees</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <div class="form-group">
-                    <label >Name</label>
-                    <input id="name" type="text" class="form-control" required label="name">
-                  </div>
-                  <div class="form-group">
-                    <label >Age</label>
-                    <input id="age" type="text" class="form-control" required label="age">
-                  </div>
-                  <div class="form-group">
-                    <label>Gender</label>
-                    <input id="gender" type="text" class="form-control" required label="gender">
-                  </div>
-                  <div class="form-group">
-                    <label>Email</label>
-                    <input id="email" type="emil" class="form-control" required label="gender">
-                  </div>
-                  <div class="form-group">
-                    <label>Address</label>
-                    <textarea id="address" class="form-control" required label="address"></textarea>
-                  </div>
-                  <div class="form-group">
-                    <label>Phone</label>
-                    <input id="phone" type="text" class="form-control" required label="phone">
-                  </div>                  <div class="form-group">
-                    <label>Department</label>
-                    <input id="department" type="text" class="form-control" required label="department">
-                  </div>                  <div class="form-group">
-                    <label>Position</label>
-                    <input id="position" type="text" class="form-control" required label="position">
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                  <button type="button" class="btn btn-success">Save</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!----edit-modal end--------->
-
-
-          <!----delete-modal start--------->
-          <div class="modal fade" tabindex="-1" id="deleteEmployeeModal" role="dialog">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title">Delete Employees</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <p>Are you sure you want to delete this Records</p>
-                  <p class="text-warning"><small>this action Cannot be Undone,</small></p>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                  <button type="button" class="btn btn-success">Delete</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!----edit-modal end--------->
-
-
-
-
-        </div>
+        <h2>Manage Department</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>S.No</th>
+              <th>Department Name</th>
+              <th>Creation Date</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>HR</td>
+              <td>2022-03-15 12:29:06</td>
+              <td>
+                <button class="edit-btn">Edit</button>
+                <button class="delete-btn">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Logistics</td>
+              <td>2022-03-15 13:04:38</td>
+              <td>
+                <button class="edit-btn">Edit</button>
+                <button class="delete-btn">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Technical</td>
+              <td>2022-03-15 13:04:48</td>
+              <td>
+                <button class="edit-btn">Edit</button>
+                <button class="delete-btn">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Accounts</td>
+              <td>2022-03-15 13:04:58</td>
+              <td>
+                <button class="edit-btn">Edit</button>
+                <button class="delete-btn">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Testing</td>
+              <td>2022-03-15 13:05:08</td>
+              <td>
+                <button class="edit-btn">Edit</button>
+                <button class="delete-btn">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>Operations</td>
+              <td>2022-03-15 13:05:15</td>
+              <td>
+                <button class="edit-btn">Edit</button>
+                <button class="delete-btn">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
       <!------main-content-end----------->
@@ -460,20 +387,6 @@
 
   </div>
   <!-------complete html----------->
-<!-- Chart Modal -->
-<div class="modal fade" id="employeeChartModal" tabindex="-1" role="dialog" aria-labelledby="employeeChartModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="employeeChartModalLabel">Employee Chart</h5>
-        <button type="button close-btn" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <canvas id="employeeChart"></canvas>
-      </div>
-</div>
 
 
 
