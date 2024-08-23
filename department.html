@@ -305,122 +305,192 @@
         button.add-btn:hover {
           background-color: #218838;
         }
+
+        .form-container {
+          width: 100%;
+          padding: 20px;
+          background-color: #fff;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+          border-radius: 8px;
+        }
+
+        .form-container form {
+          background-color: #a0ceff;
+          padding: 20px 30px;
+        }
+
+        .form-container h2 {
+          text-align: center;
+          color: #007bff;
+          margin-bottom: 20px;
+        }
+
+        .form-container .input-container {
+          margin-bottom: 20px;
+        }
+
+        .form-container label {
+          display: block;
+          margin-bottom: 5px;
+          color: #333;
+          font-size: 16px;
+        }
+
+        .form-container input[type="text"] {
+          width: 100vw;
+          padding: 10px;
+          border: 2px solid rgb(117, 94, 248);
+          border-radius: 4px;
+          box-sizing: border-box;
+          transition: border 0.3s;
+          margin-bottom: 20px;
+        }
+
+        .form-container input[type="text"]:focus {
+          border-color: #007bff;
+        }
+
+        .form-container button {
+          width: fit-content;
+          padding: 10px 20px;
+          background-color: #28a745;
+          color: white;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          font-size: 16px;
+          transition: background-color 0.3s;
+        }
+
+        .form-container button:hover {
+          background-color: #218838;
+        }
       </style>
 
 
       <div class="main-content">
         <h2>Manage Department</h2>
-        <button class="add-btn">Add Department</button>
-        <table>
-          <thead>
-            <tr>
-              <th>S.No</th>
-              <th>Department Name</th>
-              <th>Creation Date</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Engineering</td>
-              <td>2022-03-15 12:29:06</td>
-              <td>
-                <button class="edit-btn">Edit</button>
-                <button class="delete-btn">Delete</button>
-              </td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Marketing</td>
-              <td>2022-03-15 13:04:38</td>
-              <td>
-                <button class="edit-btn">Edit</button>
-                <button class="delete-btn">Delete</button>
-              </td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Sales</td>
-              <td>2022-03-15 13:04:48</td>
-              <td>
-                <button class="edit-btn">Edit</button>
-                <button class="delete-btn">Delete</button>
-              </td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>Human Resources</td>
-              <td>2022-03-15 13:04:58</td>
-              <td>
-                <button class="edit-btn">Edit</button>
-                <button class="delete-btn">Delete</button>
-              </td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>Finance</td>
-              <td>2022-03-15 13:05:08</td>
-              <td>
-                <button class="edit-btn">Edit</button>
-                <button class="delete-btn">Delete</button>
-              </td>
-            </tr>
-            <tr>
-              <td>6</td>
-              <td>IT</td>
-              <td>2022-03-15 13:05:15</td>
-              <td>
-                <button class="edit-btn">Edit</button>
-                <button class="delete-btn">Delete</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="add-form" style="margin-bottom: 70px;">
+          <div class="form-container">
+            <hr>
+            <form>
+              <div class="input-group">
+                <label for="departmentName">Department Name</label>
+                <input type="text" id="departmentName" name="departmentName" placeholder="">
+              </div>
+              <button type="submit">Add Department</button>
+            </form>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>S.No</th>
+                <th>Department Name</th>
+                <th>Creation Date</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Engineering</td>
+                <td>2022-03-15 12:29:06</td>
+                <td>
+                  <button class="edit-btn">Edit</button>
+                  <button class="delete-btn">Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Marketing</td>
+                <td>2022-03-15 13:04:38</td>
+                <td>
+                  <button class="edit-btn">Edit</button>
+                  <button class="delete-btn">Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Sales</td>
+                <td>2022-03-15 13:04:48</td>
+                <td>
+                  <button class="edit-btn">Edit</button>
+                  <button class="delete-btn">Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Human Resources</td>
+                <td>2022-03-15 13:04:58</td>
+                <td>
+                  <button class="edit-btn">Edit</button>
+                  <button class="delete-btn">Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Finance</td>
+                <td>2022-03-15 13:05:08</td>
+                <td>
+                  <button class="edit-btn">Edit</button>
+                  <button class="delete-btn">Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>IT</td>
+                <td>2022-03-15 13:05:15</td>
+                <td>
+                  <button class="edit-btn">Edit</button>
+                  <button class="delete-btn">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!------main-content-end----------->
+
+
+
+        <!----footer-design------------->
+
+        <footer class="footer">
+          <div class="container-fluid">
+            <div class="footer-in">
+              <p class="mb-0">&copy 2024 X. All Rights Reserved.</p>
+            </div>
+          </div>
+        </footer>
       </div>
 
-      <!------main-content-end----------->
-
-
-
-      <!----footer-design------------->
-
-      <footer class="footer">
-        <div class="container-fluid">
-          <div class="footer-in">
-            <p class="mb-0">&copy 2024 X. All Rights Reserved.</p>
-          </div>
-        </div>
-      </footer>
     </div>
-
-  </div>
-  <!-------complete html----------->
+    <!-------complete html----------->
 
 
 
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="./assets/js/jquery-3.3.1.slim.min.js"></script>
-  <script src="./assets/js/popper.min.js"></script>
-  <script src="./assets/js/bootstrap.min.js"></script>
-  <script src="./assets/js/jquery-3.3.1.min.js"></script>
-  <script src="./index.js" type="module"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="./assets/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="./assets/js/popper.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/jquery-3.3.1.min.js"></script>
+    <script src="./index.js" type="module"></script>
 
 
-  <script type="text/javascript">
-    $(document).ready(function () {
-      $(".xp-menubar").on('click', function () {
-        $("#sidebar").toggleClass('active');
-        $("#content").toggleClass('active');
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $(".xp-menubar").on('click', function () {
+          $("#sidebar").toggleClass('active');
+          $("#content").toggleClass('active');
+        });
+
+        $('.xp-menubar,.body-overlay').on('click', function () {
+          $("#sidebar,.body-overlay").toggleClass('show-nav');
+        });
+
       });
-
-      $('.xp-menubar,.body-overlay').on('click', function () {
-        $("#sidebar,.body-overlay").toggleClass('show-nav');
-      });
-
-    });
-  </script>
+    </script>
 
 </body>
 
