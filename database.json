@@ -461,6 +461,16 @@
       "taskPriority": "Most Urgent",
       "endDate": "2024-08-25",
       "status": "In Progress"
+    },
+    {
+      "id": 2,
+      "taskTitle": "Hoàn thành dự án quản lý nhân viên",
+      "taskDescription": "dự án có đủ các tính năng thêm, sửa, xóa",
+      "departmentName": "IT",
+      "assignedTo": "Hoang Van Cuong",
+      "taskPriority": "Most Urgent",
+      "endDate": "2024-08-25",
+      "status": "In Progress"
     }
   ]
 }

@@ -121,6 +121,7 @@
 
 .section-one .inner-wrap {
   position: relative;
+  text-align: center;
 }
 
 .section-one .inner-subtitle {
@@ -141,6 +142,10 @@
   font-size: 20px;
   color: #bbbbbb;
   margin-bottom: 45px;
+}
+
+.section-one .inner-desc span {
+  padding: 40px;
 }
 
 .section-one .button {
