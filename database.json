@@ -1,34 +1,6 @@
 {
   "users": [
     {
-      "age": "21",
-      "gender": "nam",
-      "email": "minh.le@thanglong.com",
-      "address": "12 Nguyễn Khánh Toàn, Hà Nội, Việt Nam",
-      "phone": "0978526111",
-      "title": "Kỹ sư phần mềm",
-      "id": 1,
-      "firstName": "Lê Đình Quang Minh",
-      "position": "Kỹ sư phần mềm",
-      "department": "Engineering"
-    },
-    {
-      "id": 2,
-      "firstName": "Lê Tuấn Đạt",
-      "age": "21",
-      "gender": "nam",
-      "email": "an.nguyen@thanglong.com",
-      "phone": "0978526111",
-      "birthDate": "1996-05-20",
-      "address": "12 Nguyễn Khánh Toàn, Hà Nội, Việt Nam",
-      "department": "Marketing",
-      "companyName": "Công ty cổ phần thuốc lá Thăng Long",
-      "title": "Chuyên viên Marketing",
-      "companyAddress": "25 Phố Vũ Ngọc Phan, Láng Hạ, Hà Nội, Việt Nam",
-      "role": "user",
-      "position": "Chuyên viên Marketing"
-    },
-    {
       "id": 3,
       "firstName": "Trần Minh Quân",
       "age": "32",
@@ -92,8 +64,8 @@
     },
     {
       "id": 7,
-      "firstName": "Đỗ Mạnh Hùng",
-      "age": 31,
+      "firstName": "Đỗ Mạnh Hưng",
+      "age": "31",
       "gender": "nam",
       "email": "hung.do@thanglong.com",
       "phone": "0978223344",
@@ -103,7 +75,8 @@
       "companyName": "Công ty cổ phần thuốc lá Thăng Long",
       "title": "Chuyên viên IT",
       "companyAddress": "25 Phố Vũ Ngọc Phan, Láng Hạ, Hà Nội, Việt Nam",
-      "role": "admin"
+      "role": "admin",
+      "position": "Chuyên viên IT"
     },
     {
       "id": 8,
@@ -456,8 +429,8 @@
       "id": 1,
       "taskTitle": "Viết báo cáo",
       "taskDescription": "Viết báo cáo kết thúc môn thực tập chuyên ngành",
-      "departmentName": "Engineering",
-      "assignedTo": "Lê Đình Quang Minh",
+      "departmentName": "Marketing",
+      "assignedTo": "Le Tuan Dat",
       "taskPriority": "Most Urgent",
       "endDate": "2024-08-25",
       "status": "In Progress"
@@ -466,8 +439,8 @@
       "id": 2,
       "taskTitle": "Hoàn thành dự án quản lý nhân viên",
       "taskDescription": "dự án có đủ các tính năng thêm, sửa, xóa",
-      "departmentName": "IT",
-      "assignedTo": "Hoang Van Cuong",
+      "departmentName": "Engineering",
+      "assignedTo": "Le Dinh Quang Minh",
       "taskPriority": "Most Urgent",
       "endDate": "2024-08-25",
       "status": "In Progress"

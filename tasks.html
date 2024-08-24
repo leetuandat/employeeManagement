@@ -532,8 +532,11 @@
 
       const task = { id: taskId, taskTitle, taskDescription, departmentName, assignedTo, taskPriority, endDate, status };
 
-      fetch('http://localhost:3000/task', {
-        method: 'POST',
+      const method = document.getElementById('taskId').value ? 'PUT' : 'POST';
+      const url = method === 'PUT' ? `http://localhost:3000/task/${taskId}` : 'http://localhost:3000/task';
+
+      fetch(url, {
+        method: method,
         headers: {
           'Content-Type': 'application/json',
         },
@@ -547,14 +550,15 @@
         })
         .then(data => {
           console.log('Success:', data);
-          tasks.push(data); // Thêm task vào mảng tasks
-          updateTaskTable(); // Cập nhật bảng task
-          closeTaskModal(); // Đóng modal
+          if (method === 'POST') tasks.push(data);
+          updateTaskTable();
+          closeTaskModal();
         })
         .catch((error) => {
           console.error('Error:', error);
         });
     }
+
 
     function updateTaskTable() {
       fetch('http://localhost:3000/task')
@@ -588,25 +592,37 @@
 
     function editTask(id) {
       fetch(`http://localhost:3000/task/${id}`)
-        .then(response => response.json())
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
         .then(task => {
+          // Gán giá trị cho các input fields
           document.getElementById('taskId').value = task.id;
           document.getElementById('taskTitle').value = task.taskTitle;
           document.getElementById('taskDescription').value = task.taskDescription;
           document.getElementById('departmentName').value = task.departmentName;
+
+          // Gọi hàm populateEmployees để cập nhật danh sách nhân viên dựa trên phòng ban
           populateEmployees();
+
+          // Gán giá trị tiếp tục sau khi cập nhật danh sách nhân viên
           document.getElementById('assignedTo').value = task.assignedTo;
           document.getElementById('taskPriority').value = task.taskPriority;
           document.getElementById('endDate').value = task.endDate;
           document.getElementById('status').value = task.status;
 
+          // Hiển thị modal chỉnh sửa
           document.getElementById('modal-title').textContent = 'Edit Task';
           document.getElementById('taskModal').style.display = 'block';
         })
-        .catch((error) => {
-          console.error('Error:', error);
+        .catch(error => {
+          console.error('There was a problem with the fetch operation:', error);
         });
     }
+
 
     function deleteTask(id) {
       fetch(`http://localhost:3000/task/${id}`, {
