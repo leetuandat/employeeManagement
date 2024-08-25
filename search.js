@@ -6,7 +6,7 @@ const search = (API_User) => {
     console.log(searchInput.value);
   });
   params.q = searchInput.value;
-  API_User = `http://localhost:3000/users?q=${params.q}&_sort=${params.sort}&_order=asc&_page=${params.page}&_limit=${params.limit}`;
+  API_User = `http://localhost:3000/users?q=${params.q}&_sort=${params.sort}&_order=asc`;
   console.log(API_User)
   DrawUser(API_User);
 

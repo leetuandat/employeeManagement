@@ -79,7 +79,7 @@
         </li>
 
         <li class="dropdown">
-          <a href="task.html" class="">
+          <a href="tasks.html" class="">
             <i class="material-icons">task</i>Task
           </a>
         </li>
@@ -465,14 +465,121 @@
     let tasks = [];
     let taskIdCounter = 1;
 
+    // const employees = {
+    //   "Engineering": ["Le Dinh Quang Minh", "Hoang Van Binh", "Nguyen Huu Tai", "Pham Van Tung", "Hoang Van Dat", "Pham Quoc Khanh"],
+    //   "Marketing": ["Le Tuan Dat", "Tran Thi Ngoc", "Le Minh Hoang", "Pham Thi Van"],
+    //   "Sales": ["Tran Minh Quan", "Pham Hong Son", "Vu Van Nam", "Le Quoc Hung", "Nguyen Minh Hoa"],
+    //   "Human Resources": ["Le Thi Lan", "Le Thi Thao", "Tran Ngoc Lan", "Tran Thu Trang", "Le Thi Hong"],
+    //   "Finance": ["Nguyen Thi Hanh", "Hoang Thi Ha", "Pham Quang Huy", "Nguyen Thu Ha", "Le Thi Xuan", "Nguyen Thu Thuy"],
+    //   "IT": ["Do Manh Hung", "Hoang Van Cuong", "Hoang Van Dung", "Tran Minh Tuan"]
+    // };
+
     const employees = {
-      "Engineering": ["Le Dinh Quang Minh", "Hoang Van Binh", "Nguyen Huu Tai", "Pham Van Tung", "Hoang Van Dat", "Pham Quoc Khanh"],
-      "Marketing": ["Le Tuan Dat", "Tran Thi Ngoc", "Le Minh Hoang", "Pham Thi Van"],
-      "Sales": ["Tran Minh Quan", "Pham Hong Son", "Vu Van Nam", "Le Quoc Hung", "Nguyen Minh Hoa"],
-      "Human Resources": ["Le Thi Lan", "Le Thi Thao", "Tran Ngoc Lan", "Tran Thu Trang", "Le Thi Hong"],
-      "Finance": ["Nguyen Thi Hanh", "Hoang Thi Ha", "Pham Quang Huy", "Nguyen Thu Ha", "Le Thi Xuan", "Nguyen Thu Thuy"],
-      "IT": ["Do Manh Hung", "Hoang Van Cuong", "Hoang Van Dung", "Tran Minh Tuan"]
-    };
+      "Sales": [
+        "Nguyễn Văn An",
+        "Nguyễn Minh Tuấn",
+        "Nguyễn Văn Thành",
+        "Nguyễn Văn Bình",
+        "Trần Thị Hiền",
+        "Nguyễn Văn Hưng",
+        "Nguyễn Văn Toàn",
+        "Nguyễn Thị Dung",
+        "Nguyễn Văn Hùng",
+        "Phạm Thị Hạnh",
+        "Phạm Văn Hải",
+        "Nguyễn Văn Kiên",
+        "Phạm Thị Nhung",
+        "Nguyễn Văn Kiên",
+        "Nguyễn Văn Cường",
+        "Trần Văn Hùng"
+      ],
+      "Marketing": [
+        "Trần Thị Bích",
+        "Trần Văn Bảo",
+        "Nguyễn Văn Nam",
+        "Phạm Thị Vân",
+        "Lê Thị Lan",
+        "Trần Văn Lâm",
+        "Lê Thị Hương",
+        "Phạm Thị Huyền",
+        "Nguyễn Văn Hải",
+        "Phạm Văn Khánh",
+        "Trần Thị Hạnh",
+        "Nguyễn Văn Kiên",
+        "Trần Văn Khánh",
+        "Phạm Văn Mạnh",
+        "Trần Thị Tuyết",
+        "Trần Thị Mai",
+        "Nguyễn Văn Hùng"
+      ],
+      "IT": [
+        "Lê Quang Minh",
+        "Nguyễn Văn Toàn",
+        "Phạm Thị Dung",
+        "Lê Thị Thu",
+        "Nguyễn Văn Khoa",
+        "Phạm Văn Khánh",
+        "Trần Thị Lan",
+        "Lê Văn Minh",
+        "Trần Văn Tú",
+        "Nguyễn Văn Quân",
+        "Nguyễn Văn Tiến",
+        "Nguyễn Văn Cường",
+        "Nguyễn Văn Khôi",
+        "Nguyễn Văn Hùng"
+      ],
+      "Human Resources": [
+        "Phạm Hồng Hà",
+        "Trần Thị Lan",
+        "Nguyễn Văn Bình",
+        "Trần Văn Tú",
+        "Nguyễn Thị Lan",
+        "Nguyễn Văn Quân",
+        "Trần Thị Hiền",
+        "Nguyễn Văn Dũng",
+        "Nguyễn Văn Đạt",
+        "Nguyễn Thị Lan",
+        "Nguyễn Văn Cường",
+        "Nguyễn Thị Hồng"
+      ],
+      "Finance": [
+        "Hoàng Văn Khánh",
+        "Phạm Văn Hùng",
+        "Nguyễn Văn Hùng",
+        "Nguyễn Thị Thu",
+        "Trần Văn Khánh",
+        "Nguyễn Văn Hùng",
+        "Nguyễn Thị Lan",
+        "Nguyễn Thị Tuyết",
+        "Nguyễn Văn Khánh",
+        "Nguyễn Văn Mạnh",
+        "Nguyễn Thị Hồng",
+        "Trần Văn Khánh",
+        "Nguyễn Văn Hùng",
+        "Trần Thị Hiền",
+        "Nguyễn Văn Hải"
+      ],
+      "Engineering": [
+        "Đỗ Thị Ngọc",
+        "Lê Thị Thu",
+        "Phạm Văn Khôi",
+        "Nguyễn Văn Dũng",
+        "Nguyễn Văn Toàn",
+        "Phạm Văn Thành",
+        "Trần Văn Minh",
+        "Nguyễn Văn An",
+        "Nguyễn Văn Nam",
+        "Nguyễn Văn Bình",
+        "Trần Văn Đạt",
+        "Trần Thị Hồng",
+        "Nguyễn Văn Minh",
+        "Nguyễn Văn Dương",
+        "Trần Văn Tiến",
+        "Nguyễn Văn Khoa",
+        "Nguyễn Văn Cường",
+        "Nguyễn Văn Toàn"
+      ]
+    }
 
     function openAddTaskModal() {
       document.getElementById('taskForm').reset();
